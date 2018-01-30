@@ -7,7 +7,7 @@ error_reporting(0);
 	}
 	$order = $_POST['order'];
 	$obj->out = json_encode($order);
-	$myfile = fopen("order.txt", "w");
-	file_put_contents("order.txt", serialize($obj));
+	$myfile = fopen("order.JSON", "w");
+	file_put_contents("order.JSON", serialize($obj));
 	fclose($myfile);
 ?>
