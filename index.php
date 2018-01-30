@@ -79,13 +79,17 @@
 				$.getJSON( "server/pizzas.json", function(data) {
 				  for(var i = 0; i<(data.pizza).length; i++){
 					$("#hidden").append(data.pizza[i].name+"-");
-					//alert((data.pizza[i].price-(data.pizza[i].price*data.pizza[i].discount)/100))
 					$("#show_product").append("<div class = 'col-md-4'><img src = '"+data.pizza[i].image+"'><h4><strong>"+data.pizza[i].name+"</strong></h4><p class = 'red'>Discount "+data.pizza[i].discount+"%<p>"+data.pizza[i].ingredients+"</p></p><p id = 'max-data'><strong>INR "+(data.pizza[i].price-(data.pizza[i].price*data.pizza[i].discount)/100)+"</strong> | <strike><strong>INR "+data.pizza[i].price+"</strong></strike> | Size : "+data.pizza[i].size+" | <button class = 'btn btn-primary' id = '"+data.pizza[i].name+"-"+data.pizza[i].price+"' onclick = 'add_to_cart("+data.pizza[i].price+","+data.pizza[i].id+","+data.pizza[i].discount+")'>Add to cart</button></p></div>");
 				  }
 				});
 				if($('#count').html() == '0'){
-					$("#final").prop('disabled',true)
+					$("#final").prop('disabled',true);
 				}
+				$("#final").click(function(){
+						$.post('server/order.php', {'data':'success'},function(data, status){
+							alert(data);
+						});
+					})
 			})
 			var order = {}; pizza = {};
 			order.pizza_name = [];
@@ -103,10 +107,9 @@
 				if($('#count').html() != '0'){
 					$("#final").prop('disabled',false)
 					$("#final").click(function(){
-						$.post('server/order.php',{'order':order}, function(data, status){
-							alert(data);
+						$.post('server/order.php',{'order':order, 'data':''}, function(data, status){
 						});
-						//alert()
+						
 					})
 				}
 			}
