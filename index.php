@@ -74,7 +74,8 @@
 		</div>
 		<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 		<script>
-		var count = 0, total = 100;
+		var count = 0, total = 100, order = {};
+			order.pizza_name = [];
 			$(document).ready(function(){
 				$.getJSON( "server/pizzas.json", function(data) {
 				  for(var i = 0; i<(data.pizza).length; i++){
@@ -86,31 +87,30 @@
 					$("#final").prop('disabled',true);
 				}
 				$("#final").click(function(){
-						$.post('server/order.php', {'data':'success'},function(data, status){
+					//console.log(order)
+					$.post('server/order.php', {'data':'success', 'order':order},function(data, status){
+						if(status == 'success'){
+							location.reload(true);
 							alert(data);
-						});
-					})
+						}
+						
+					});
+				})
 			})
-			var order = {}; pizza = {};
-			order.pizza_name = [];
 			function add_to_cart(price, id, discount){
+				var pizza = {};
 				var a = ($("#hidden").html()).split("-");
-				count++;
 				dicount_price = price-(price*discount/100);
-				$('#count').html(count);
-				$("#show_product_detail").append("<tr><td>"+a[id]+"</td><td>"+dicount_price+"</td></tr>");
-				pizza.name = a[id];
 				pizza.price = dicount_price;
+				pizza.name = a[id-1];
 				order.pizza_name[count] = pizza;
+				count++;
+				$('#count').html(count);
+				$("#show_product_detail").append("<tr><td>"+a[id-1]+"</td><td>"+dicount_price+"</td></tr>");
 				total = total + dicount_price;
 				$(".total").html(total);
 				if($('#count').html() != '0'){
 					$("#final").prop('disabled',false)
-					$("#final").click(function(){
-						$.post('server/order.php',{'order':order, 'data':''}, function(data, status){
-						});
-						
-					})
 				}
 			}
 		</script>
