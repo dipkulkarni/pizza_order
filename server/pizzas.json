@@ -1,0 +1,76 @@
+{
+  "pizza": [
+    {
+      "id": "1",
+      "name": "Veggie Supreme",
+      "price": 545,
+      "size": "Medium",
+      "image": "images/1.jpg",
+	  "ingredients":"Onion, Capsicum, Mushroom, Red Paprika, Black Olives, Sweet Corn", 
+	  "discount":5
+    },
+    {
+      "id": "2",
+      "name": "Exotica",
+      "price": 545,
+      "size": "Medium",
+      "image": "images/2.jpg",
+	  "ingredients":"Red Capsicum, Green Capsicum, Baby Corn, Black Olives, Jalapenos",
+	  "discount":5
+    },
+    {
+      "id": "3",
+      "name": "Paneer Vegorama",
+      "price": 545,
+      "size": "Medium",
+      "image": "images/3.jpg",
+	  "ingredients":"Paneer, Onion, Capsicum, Black Olives, Red Paprika",
+	  "discount":5
+    },
+	{
+      "id": "4",
+      "name": "Chicken Supreme",
+      "price": 625,
+      "size": "Medium",
+      "image": "images/3.jpg",
+	  "ingredients":"Chicken Tikka, Chicken Hot & Chilly, Chicken Meatball",
+	  "discount":5
+    },
+	{
+      "id": "5",
+      "name": "Triple Chicken Feast",
+      "price": 625,
+      "size": "Medium",
+      "image": "images/5.jpg",
+	  "ingredients":"Chicken Keema, Chicken Meatball, Chicken Hot & Chilly, Capsicum, Onion, Sweet Corn",
+	  "discount":6
+    },
+	{
+      "id": "6",
+      "name": "Chicken Italiano",
+      "price": 545,
+      "size": "Medium",
+      "image": "images/6.jpg",
+	  "ingredients":"Chicken Pepperoni, Chicken Sausage, Mushroom, Capsicum, Black Olives",
+	  "discount":7
+    },
+	{
+      "id": "7",
+      "name": "Tandoori Paneer",
+      "price": 515,
+      "size": "Medium",
+      "image": "images/6.jpg",
+	  "ingredients":"Paneer, Onion, Capsicum, Red Paprika & Tomato",
+	  "discount":6
+    },
+	{
+      "id": "8",
+      "name": "Veggie Lover",
+      "price": 545,
+      "size": "Medium",
+      "image": "images/8.jpg",
+	  "ingredients":"Onion, Capsicum, Mushroom, Tomato, Red Paprika",
+	  "discount":7
+    }
+  ]
+}
