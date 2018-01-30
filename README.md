@@ -1,1 +1,1 @@
-# pizza_oreder
+Index page shows the list of pizzas with their ingrediants,discounts,price and other required data, one can add the pizza to the cart and place the order. the order will get placed and JSON file will be genrated.
